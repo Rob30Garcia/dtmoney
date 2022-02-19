@@ -13,8 +13,8 @@ export const Container = styled.form`
     height: 4rem;
     border-radius: 0.25rem;
 
-    border: 1px solid var(--input-background);
-    background: var(--input-background);
+    border: 1px solid var(--form-background);
+    background: var(--form-background);
 
     font-size: 1rem;
     font-weight: 400;
