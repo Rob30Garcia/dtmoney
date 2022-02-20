@@ -4,6 +4,7 @@ import { Dashboard } from "./components/Dashboard";
 import { createServer, Model } from 'miragejs';
 import { useState } from 'react';
 import { NewTransactionModal } from "./components/NewTransactionModal";
+import { TransactionsProvider } from "./TransactionsContext";
 
 createServer({
   models: {
@@ -60,7 +61,7 @@ export function App() {
   }
 
   return (
-    <>
+    <TransactionsProvider>
       <GlobalStyle />
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
       <Dashboard/>
@@ -69,6 +70,6 @@ export function App() {
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
       />
-    </>
+    </TransactionsProvider>
   );
 }
